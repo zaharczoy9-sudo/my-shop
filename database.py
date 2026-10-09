@@ -43,13 +43,17 @@ def get_product(pid):
 
 def add_product(name, desc, price, photo, stock):
     with db() as c:
-        c.execute("INSERT INTO products (name,description,price,photo_url,stock) VALUES (?,?,?,?,?)",
-                  (name, desc, price, photo, stock))
+        c.execute(
+            "INSERT INTO products (name,description,price,photo_url,stock) VALUES (?,?,?,?,?)",
+            (name, desc, price, photo, stock)
+        )
 
 def update_product(pid, name, desc, price, photo, stock):
     with db() as c:
-        c.execute("""UPDATE products SET name=?, description=?, price=?, photo_url=?, stock=?
-                     WHERE id=?""", (name, desc, price, photo, stock, pid))
+        c.execute(
+            "UPDATE products SET name=?, description=?, price=?, photo_url=?, stock=? WHERE id=?",
+            (name, desc, price, photo, stock, pid)
+        )
 
 def delete_product(pid):
     with db() as c:
@@ -57,5 +61,7 @@ def delete_product(pid):
 
 def add_order(user_id, username, product_id):
     with db() as c:
-        c.execute("INSERT INTO orders (user_id, username, product_id) VALUES (?,?,?)",
-                  (user_id, username, product_id))
+        c.execute(
+            "INSERT INTO orders (user_id, username, product_id) VALUES (?,?,?)",
+            (user_id, username, product_id)
+        )
