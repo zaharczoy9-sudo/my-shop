@@ -1,0 +1,5 @@
+import os
+
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "8819952536:AAEqtGS4OvPqU-m-fmmSPq43M76Onq8Jh6E")
+ADMIN_IDS = [6021210381]
+SECRET = os.environ.get("SECRET", "375256969696")
